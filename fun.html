@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Fun</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #e6e6fa, #dda0dd, #ba55d3);
+            color: #4b0082;
+            margin: 0;
+            padding: 20px;
+        }
+        nav { margin-bottom: 20px; }
+        nav a { margin: 0 15px; text-decoration: none; color: #8a2be2; font-weight: bold; font-size: 1.2em; }
+        nav a:hover { color: #ff69b4; }
+        .quiz { background: rgba(255, 255, 255, 0.9); border-radius: 15px; padding: 20px; margin: 20px auto; max-width: 500px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+        button { background: #8a2be2; color: white; padding: 10px; margin: 5px; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #6a5acd; }
+        #result { margin-top: 20px; font-size: 1.2em; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About You</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="fun.html">Fun</a>
+    </nav>
+    <h1>Birthday Quiz: How Well Do You Know [Friend's Name]?</h1>
+    <div class="quiz">
+        <p>What’s [Friend's Name]'s favorite color?</p>
+        <button onclick="checkAnswer('Lavender')">Lavender</button>
+        <button onclick="checkAnswer('Blue')">Blue</button>
+        <button onclick="checkAnswer('Pink')">Pink</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function checkAnswer(answer) {
+            const result = document.getElementById('result');
+            if (answer === 'Lavender') {
+                result.innerHTML = 'Correct! You know her well. 🎉';
+            } else {
+                result.innerHTML = 'Oops, try again! Hint: It’s the theme of this site.';
+            }
+        }
+    </script>
+</body>
+</html>

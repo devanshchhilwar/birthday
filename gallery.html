@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Gallery</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #e6e6fa, #dda0dd, #ba55d3);
+            color: #4b0082;
+            margin: 0;
+            padding: 20px;
+        }
+        nav { margin-bottom: 20px; }
+        nav a { margin: 0 15px; text-decoration: none; color: #8a2be2; font-weight: bold; font-size: 1.2em; }
+        nav a:hover { color: #ff69b4; }
+        .slideshow { position: relative; max-width: 600px; margin: 0 auto; }
+        img { width: 100%; border-radius: 15px; border: 5px solid #dda0dd; }
+        .arrow { position: absolute; top: 50%; transform: translateY(-50%); font-size: 2em; cursor: pointer; color: #8a2be2; }
+        .left { left: 10px; }
+        .right { right: 10px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About You</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="fun.html">Fun</a>
+    </nav>
+    <h1>Memorable Moments with [Friend's Name]</h1>
+    <div class="slideshow">
+        <img id="slide" src="https://via.placeholder.com/600x400?text=Photo+1" alt="Birthday Photo">
+        <div class="arrow left" onclick="changeSlide(-1)">&#10094;</div>
+        <div class="arrow right" onclick="changeSlide(1)">&#10095;</div>
+    </div>
+    <p>Navigate through our favorite memories!</p>
+
+    <script>
+        const images = [
+            "https://via.placeholder.com/600x400?text=Photo+1",
+            "https://via.placeholder.com/600x400?text=Photo+2",
+            "https://via.placeholder.com/600x400?text=Photo+3"
+        ];
+        let current = 0;
+        function changeSlide(direction) {
+            current += direction;
+            if (current < 0) current = images.length - 1;
+            if (current >= images.length) current = 0;
+            document.getElementById('slide').src = images[current];
+        }
+    </script>
+</body>
+</html>
